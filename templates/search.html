@@ -1,0 +1,13 @@
+<h1>it's working</h1>
+{{info}}
+{{query}}
+{{issues}}
+{{json_data}}
+
+<h1 style="color:green">{{ js}}</h1>
+{% for js in json_data.items %}
+
+<h3 style="color: #555">{{ js.tags }}</h3>
+
+
+{% endfor %}
