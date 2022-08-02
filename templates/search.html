@@ -1,13 +1,92 @@
-<h1>it's working</h1>
-{{info}}
-{{query}}
-{{issues}}
-{{json_data}}
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Questions{% endblock %}
+{% block content %}
 
-<h1 style="color:green">{{ js}}</h1>
-{% for js in json_data.items %}
+  
 
-<h3 style="color: #555">{{ js.tags }}</h3>
+<div class="container" style=" margin-top: 30px; margin-bottom: 30px;"  >
+    <div class="card" style="background:hsl(0, 87%, 43%);" >
+        <h1 class="search-result" style="color:#fff; text-align:center; width: auto;">API Consumption From stackoverflow.com</h1>
+    </div>
+</div>
 
+<div class="search-section">
+    
+    <h1 class="search-result">{{query}} questions on stackoverflow.com</h1>
+
+    {% for data in json_data %}
+    {% if query in  data.tags %}
+<div class="flex-container" style="margin-top:30px;">
+    
+   
+  <div>
+  
+
+    <div class="property-flex">
+        
+        <a href="{{data.link}}">
+        <div class="card-image ">
+ 
+            <img class="img-with-animation skip-lazy animated-in" data-delay="0" height="50" width="130" data-animation="fade-in" src="{{data.owner.profile_image}}" alt="/static/images/no_img.png">
+ 
+        </div>
+        </a>
+    </div>
+  </div>
+  <div>
+      <div class="property-information">
+         <a href="{{data.link}}">
+            <div class="property-address">
+                <h2>Post By: {{ data.owner.display_name}} </h2>
+            </div>
+         </a><br>
+          <div class="property-information">
+              <h3>Question:<span> {{data.title}}</span></h3>
+              <h3>Question  Related to: {{data.tags}}</h3>
+              <h3>Question Id: {{data.question_id}}</h3>
+              <h3>How Mnay Answers Given: {{data.answer_count}}</h3>
+              <h3>Seen By :{{data.view_count}} &nbsp; People</h3>
+              <h3>Reputation:{{data.owner.reputation}}</h3>
+              <h3>Date Posted:{{data.creation_date}}</h3>
+              <h3>Last Active Date:{{data.last_activity_date}}</h3>
+          </div>
+      </div>
+  </div>
+  <!--<div class="property-information">
+      <h3 class="right">Answered : {{data.is_answered}}</h3>
+      <h3 class="right">Listing ID50044316PBMLS-RETS</h3>
+  </div>  -->
+  <!--<div class="property-information">
+    <h3 class="center">Registered User: {{data.owner.user_type}}</h3>
+    
+</div> --> 
+</div>
+
+<div class="contar">
+<div class="btn-groupy " role="group" aria-label="Basic mixed styles example">
+   
+    <!--<a href="" type="button" class="btn btnb btn-danger">View pictures</a>
+    <a href="" type="button" class="btn btnb btn-warning">Visual Tour</a>
+  
+    <a href="" type="button" class="btn btnb btn-success" >Add To Your Wishlist</a>-->
+    <a href="{{data.link}}"  >Link to original question in stackoverflow</a>
+  </div>
+</div>
+
+</div>
+
+ 
+{% else %}
+<h1> </h1>
+{% endif %}
 
 {% endfor %}
+
+{% if not query %}
+<h3>Nothing found</h3>
+{% endif %}
+
+
+{% endblock %}
+

@@ -12,4 +12,6 @@ urlpatterns = [
     path('' ,views.home,name='home'),
     path('check/' ,views.json_dumps,name='check'),
      path('search/' ,views.search,name='search'),
+      path('contact/' ,views.contactMe,name='contact'),
+   
 ]    

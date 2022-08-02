@@ -1,0 +1,115 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Noto Sans Display', sans-serif;
+    font-family: 'Oswald', sans-serif;
+    font-family: 'Poppins', sans-serif;
+  /*text-transform: capitalize;*/
+    transition: all .2s linear;
+  }     
+body{
+
+    font-family: 'Oswald', sans-serif;
+    /*font-size: 15px;*/
+    font-weight: 400; 
+    line-height: 1.5em;
+    background: whitesmoke;
+    }
+    
+.card-image{
+    height: 70px;
+}   
+.card-image img{
+  border-radius: 50%;
+  padding: 30px;
+  align-items: center;
+
+}
+
+.flex-container {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 25px;
+}
+
+.flex-item-left {
+  flex: 50%;
+}
+
+.flex-item-right {
+  flex: 50%;
+}
+.card-image{
+    width: 300px;
+    height: 280px;
+    margin-left: 20px;
+}
+.card-image img{
+    width: 100%;
+    height: 100%;
+}
+.property-information{
+    margin-left: 20px;
+}
+.property-address h2{
+    word-wrap: break-word;
+    font-size: 20px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-weight: 400;
+  
+    color: #0076AD;
+    margin-left: 10px;
+}
+.property-information h3{
+    word-wrap: break-word;
+    /*width: fit-content;*/
+    font-size: 18px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #333;
+
+}
+.property-information span{
+    color: green;
+}
+.right{
+    margin-left: 50px;
+}
+.search-result{
+    margin-left: 30px;
+}
+.search-section .description{
+    font-size: 15px;
+    color: #333;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    margin-top: 30px;
+    margin-left: 30px;
+}
+.btn-groupy{
+    margin-top: 5px;
+    margin-bottom: 70px;
+    margin-left: auto; 
+    margin-right: 20;
+    right: -50px;
+   
+    
+}
+.container{
+    margin-top: 40px;
+}
+.nav-item li a{
+    color: black;
+}
+.row .my-5{
+    display: block;
+}
+.contar{
+    margin-left: 30px;
+}
+
+/* Responsive layout - makes a one column layout instead of a two-column layout */
+@media (max-width: 800px) {
+  .flex-item-right, .flex-item-left {
+    flex: 100%;
+  }
+}
